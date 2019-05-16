@@ -1,7 +1,17 @@
 #!/bin/python3
 #https://www.hackerrank.com/challenges/frequency-queries
 
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
 from collections import defaultdict
+
+# Complete the freqQuery function below.
+
 
 def freqQuery(queries):
 
@@ -26,10 +36,22 @@ def freqQuery(queries):
         if query == 3:
             ans.append(1 if preq_dict[data] > 0 else 0)
 
-    return (ans)
+    return ans
 
-queries = [[1, 1,], [2, 2], [3, 2], [1, 1], [1, 1], [2, 1], [3, 2]]
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-print (freqQuery(queries))
+    q = int(input().strip())
 
-print (69 /4)
+    queries = []
+
+    for _ in range(q):
+        queries.append(list(map(int, input().rstrip().split())))
+
+    ans = freqQuery(queries)
+
+    fptr.write('\n'.join(map(str, ans)))
+    fptr.write('\n')
+
+    fptr.close()
+
