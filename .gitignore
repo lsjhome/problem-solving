@@ -288,4 +288,8 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 
+# ipynb
+*/*.ipynb
+
 # End of https://www.gitignore.io/api/linux,macos,python,windows,jupyternotebook, pycharm+all
+
